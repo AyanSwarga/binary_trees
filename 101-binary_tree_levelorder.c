@@ -14,11 +14,11 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 	if (tree && func)
 	{
 		h = binary_tree_height(tree);
-		while (i <= h + 1)
-		{
-			print_at_level(tree, func, i);
-				i++;
-		}
+	while (i <= h + 1)
+	{
+		print_at_level(tree, func, i);
+		i++;
+	}
 	}
 
 }
