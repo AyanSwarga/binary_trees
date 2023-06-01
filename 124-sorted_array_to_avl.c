@@ -1,21 +1,6 @@
 #include "binary_trees.h"
 
 /**
- * sorted_array_to_avl - this function builds an alv tree from sorted array
- *@array: sorted array
- *@size: size of the sorted array
- *Return: alv tree form sorted array
- */
-
-avl_t *sorted_array_to_avl(int *array, size_t size)
-{
-	if (array == NULL || size == 0)
-		return (NULL);
-
-	return (aux_sort(NULL, array, 0, ((int)(size)) - 1));
-}
-
-/**
  * aux_sort - this function create the tree using the half element of the array
  * @parent: parent of the node to create
  * @array: sorted array
@@ -42,4 +27,18 @@ avl_t *aux_sort(avl_t *parent, int *array, int begin, int last)
 		return (root);
 	}
 	return (NULL);
+}
+
+/**
+ * sorted_array_to_avl - this function create a alv tree from sorted array
+ * @array: sorted array
+ * @size: size of the sorted array
+ * Return: alv tree form sorted array
+ */
+
+avl_t *sorted_array_to_avl(int *array, size_t size)
+{
+	if (array == NULL || size == 0)
+		return (NULL);
+	return (aux_sort(NULL, array, 0, ((int)(size)) - 1));
 }
